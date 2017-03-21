@@ -7,7 +7,6 @@ import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.teligen.domain.User;
@@ -37,7 +36,7 @@ public class UserController {
 		return findOne;
 	}
 
-	@RequestMapping("/callback/{id}")
+	@GetMapping("/callback/{id}")
 	public Callable<User> api() {
 		System.out.println("=====hello");
 		return new Callable<User>() {
